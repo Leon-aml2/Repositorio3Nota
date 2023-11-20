@@ -1,0 +1,68 @@
+{% extends "gestion_recursosPP.html" %}
+
+{% block title %} Registro de Productos  {% endblock %}
+
+{% block body %} 
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-12 col-xl-12">
+        <h1> | Tabla de Registro</h1>
+        <div  class="table-responsive py-2">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Marca</th>
+                        <th>Código</th>
+                        <th>Registro Cantidad</th>
+                        <th>Descuento</th>
+                        <th>Precio</th>
+                        <th>Peso</th>
+                        <th>Utilidad</th>
+                        <th>Área</th>
+                        <th>Oficio</th>
+                        <th>Costo</th>
+                        <th>País de Fabricante</th>
+                        <th>Cantidad Entrada</th>
+                        <th>Cantidad Vendida</th>
+                        <th>Ganancia</th>
+                        <th>Stok Bajo</th>
+                        <th>Fecha Última Compra</th>
+                        <th>Transporte</th>
+                        <th colspan="2">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in rm %}
+                        {% for b in categoria %}
+                            {% for a in producto %}
+                            <td>{{a.nombre}}</td>
+                            <td>{{a.marca}}</td>
+                            <td>{{a.codigo}}</td>
+                            <td>{{a.registro_cantidad}}</td>
+                            <td>{{a.descuento}}</td>
+                            <td>{{a.precio}}</td>
+                            <td>{{b.peso}}</td>
+                            <td>{{b.utilidad}}</td>
+                            <td>{{b.area}}</td>
+                            <td>{{b.oficio}}</td>
+                            <td>{{b.costo}}</td>
+                            <td>{{b.pais}}</td>
+                            <td>{{c.cantidad_entrada}}</td>
+                            <td>{{c.cantidad_vendida}}</td>
+                            <td>{{c.ganancia}}</td>
+                            <td>{{c.stok_bajo}}</td>
+                            <td>{{c.fecha_ultima_compra}}</td>
+                            <td>{{c.transporte}}</td>
+                            <td><a href="edicion_PRODUCTO/{{a.codigo}}" class="btn btn-info">Editar</a></td>
+                            <td><a href="eliminacion_PRODUCTO/{{a.codigo}}" class="btn btn-danger">Eliminar</a></td>
+                        {% endfor %}
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

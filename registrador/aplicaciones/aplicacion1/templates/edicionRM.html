@@ -1,0 +1,27 @@
+{% extends "gestion_recursosPP.html" %}
+
+{% block title %} Registro de Mercadeo {% endblock %}
+
+{% block body %} 
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h1>Formulario de Producto</h1>
+            <div class="card">
+                <div class="card-body">
+                  <form action="registrar_PRODUCTO" method="POST">{& csrf_token %}
+                    <input type="number" id="numCantidadE" name="numCantidadE" class="form-control" placeholder="Cantidad de Entrada" required >
+                    <input type="number" id="numCantidadV" name="numCantidadV" class="form-control" placeholder="Cantidad Vendida" required >
+                    <input type="number" id="numGanancia" name="numGanancia" class="form-control" placeholder="Ganancia" required >
+                    <input type="number" id="numStockB" name="numStockB" class="form-control" placeholder="Stock Bajo" required >
+                    <input type="date" id="dateFechaU" name="dateFechaU" class="form-control" placeholder="
+                    Fecha de última compra" required >
+                    <input type="text" id="txtTransporte" name="txtTransporte" class="form-control" placeholder="Transporte" required>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                  </div>
+                  </form>
+                </div>
+              </div>
+        </div>
+    </div>
+{% endblock %}

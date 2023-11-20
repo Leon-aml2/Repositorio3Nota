@@ -1,0 +1,29 @@
+{% extends "gestion_recursosPP.html" %}
+
+{% block title %} Registro de Categoría  {% endblock %}
+
+{% block body %} 
+
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-12 col-xl-12">
+        <h1>Formulario de Producto</h1>
+        <div class="card">
+            <div class="card-body">
+              <form action="/registrar_PRODUCTO" method="POST">{& csrf_token %}
+                <input type="number" id="numPeso" name="numPeso" class="form-control" placeholder="Peso" required>
+                <input type="text" id="textUtilidad" name="textUtilidad" class="form-control" placeholder="Utilidad" required >
+                <input type="text" id="textArea" name="textArea" class="form-control" placeholder="Área" required >
+                <input type="text" id="textOficio" name="textOficio" class="form-control" placeholder="Oficio" required >
+                <input type="number" id="numCosto" name="numCosto" class="form-control" 
+                placeholder="Costo" required>
+                <input type="text" id="textPaisF" name="textPaisF" class="form-control" placeholder="Pais de Fabricación" required >
+                <div class="form-group">
+                  <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+              </div>
+              </form>
+            </div>
+          </div>
+    </div>
+</div>
+
+{% endblock %}
